@@ -25,10 +25,6 @@ class ProdutoService{
 
     }
 
-    buscar(idProduto){
-
-    }
-
     buscarTodos(){
         return this.produtoRepository.buscarTodos();
     }
