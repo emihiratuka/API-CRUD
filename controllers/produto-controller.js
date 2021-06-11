@@ -1,3 +1,5 @@
+const Produto = require("../domain/produto-domain"); //representa o nosso modelo
+
 const ProdutoService = require('../services/produto-service'); //representa o nosso service, regra de negócio
 
 class ProdutoController{
@@ -8,16 +10,26 @@ class ProdutoController{
     }
 
 
-    adicionar(produto){
-
+    adicionar(req, res) {
+        let produto = new Produto(req.body.idProduto, req.body.categoriaProduto, req.body.nomeProduto, req.body.descricaoProduto, req.body.precoProduto, req.body.ativoProduto, req.body.imagemProduto, req.requestTime); //para que o nodejs entenda o body do json preciso inicializar antes com o comando app.use(express.json())
+        this.produtoService.adicionar(produto);
+        
+        //res.send('chamou pelo meu método Post' + produto);
+        //se eu quiser mostrar a mensagem como json:
+        res.json(produto);
+            
     }
-
-    excluir(idProduto){
-
+    
+    async excluir(req, res) {
+        await this.produtoService.excluir(req.body.idProduto);
+        res.send('Excluído com sucesso');
+        
     }
+    
 
-    alterar(produto){
-
+    async alterar(req, res) {
+        await this.produtoService.alterar(req.body);
+        res.send("Alterado com sucesso");
     }
 
     async buscarTodos(req, res){  

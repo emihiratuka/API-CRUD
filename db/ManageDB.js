@@ -13,7 +13,7 @@ class ManageDB{
 
 
         await mongoose.connect('mongodb+srv://user_App:2ck6KwKAZujCiTdW@cluster0.af85s.mongodb.net/tijolosfc?retryWrites=true&w=majority',
-        {userNewUrlParser: true, useUnifieldTopology: true}).catch((err)=>{
+        {userNewUrlParser: true, useUnifieldTopology: true, useFindAndModify: false}).catch((err)=>{
             console.log(`Erro na Conexão + ${err}`);
         });
         console.log("Conectado no MongoDB"); //esta tarefa só vai acontecer quando a tarefa de cima concluir com sucesso.
