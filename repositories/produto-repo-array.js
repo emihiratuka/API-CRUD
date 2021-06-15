@@ -10,16 +10,16 @@ class ProdutoRepoArray{
         this.produtos.push(produto);
     }
 
-    excluir(idProduto){
+    excluir(nomeProduto){
         //preciso primeiro localizar dentro do array
         // posso fazer de várias formas, posso usar o splice -> array.splice();
-        let i = this.produtos.findIndex((o)=>o.idProduto==idProduto);
+        let i = this.produtos.findIndex((o)=>o.nomeProduto==nomeProduto);
         this.produtos.splice(i,1);
     }
 
     alterar(produto){
         this.produtos.forEach( (o) => { //(o) é o objeto da vez, então para cada objeto verifico se o diProduto = idPrdouto
-            if (o.idProduto == produto.idProduto){
+            if (o.nomeProduto == produto.nomeProduto){
                 o.categoriaProduto = produto.categoriaProduto ? produto.categoriaProduto: o.categoriaProduto; //se tiver valor eu substituo, mas não tiver, mantenho o original
                 o.nomeProduto = produto.nomeProduto ? produto.nomeProduto: o.nomeProduto;
                 o.descricaoProduto = produto.descricaoProduto ? produto.descricaoProduto: o.descricaoProduto;
@@ -32,7 +32,7 @@ class ProdutoRepoArray{
 
     }
 
-    buscar(idProduto){
+    buscar(nomeProduto){
 
     }
 

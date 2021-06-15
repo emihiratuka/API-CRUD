@@ -14,10 +14,10 @@ class ProdutoService{
         this.produtoRepository.adicionar(produto)
     }
 
-    excluir(idProduto){
+    excluir(nomeProduto){
         //preciso primeiro localizar dentro do array
         // posso fazer de várias formas, posso usar o splice -> array.splice();
-        this.produtoRepository.excluir(idProduto);
+        this.produtoRepository.excluir(nomeProduto);
     }
 
     alterar(produto){

@@ -11,7 +11,7 @@ class ProdutoController{
 
 
     adicionar(req, res) {
-        let produto = new Produto(req.body.idProduto, req.body.categoriaProduto, req.body.nomeProduto, req.body.descricaoProduto, req.body.precoProduto, req.body.ativoProduto, req.body.imagemProduto, req.requestTime); //para que o nodejs entenda o body do json preciso inicializar antes com o comando app.use(express.json())
+        let produto = new Produto(req.body.categoriaProduto, req.body.nomeProduto, req.body.descricaoProduto, req.body.precoProduto, req.body.ativoProduto, req.body.imagemProduto, req.requestTime); //para que o nodejs entenda o body do json preciso inicializar antes com o comando app.use(express.json())
         this.produtoService.adicionar(produto);
         
         //res.send('chamou pelo meu método Post' + produto);
@@ -21,7 +21,7 @@ class ProdutoController{
     }
     
     async excluir(req, res) {
-        await this.produtoService.excluir(req.body.idProduto);
+        await this.produtoService.excluir(req.body.nomeProduto);
         res.send('Excluído com sucesso');
         
     }

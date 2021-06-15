@@ -1,5 +1,5 @@
 //repositorio MONGODB
-const mongoose = require('mongoose');
+
 const Produto = require('../domain/produto-domain');
 const ProdutoModel = require('../models/produto-model');
 
@@ -23,17 +23,17 @@ class ProdutoRepositoryMongo{
 
     }
 
-    excluir(idProduto){
-        return this.model.deleteOne({idProduto}).exec(); //this.model.deleteOne({idProduto}) é uma query e vai retornar uma promise que vai executar. ({idProduto}) é o mesmo que ({idProduto: idProduto}) se eu quiser deletar um registro com chave composta é só incluir as outras chaves com "," exemplo, ({nomeProduto, precoProduto}) ou ({nomeProduto: nomeProduto, precoProduto: precoProduto: precoProduto}) Eu posso ou não retornar um o promise.
+    excluir(nomeProduto){
+        return this.model.deleteOne({nomeProduto}).exec(); //this.model.deleteOne({nomeProduto}) é uma query e vai retornar uma promise que vai executar. ({nomeProduto}) é o mesmo que ({nomeProduto: nomeProduto}) se eu quiser deletar um registro com chave composta é só incluir as outras chaves com "," exemplo, ({nomeProduto, precoProduto}) ou ({nomeProduto: nomeProduto, precoProduto: precoProduto: precoProduto}) Eu posso ou não retornar um o promise.
     
     }
 
     alterar(produto){
-        const query = {idProduto: produto.idProduto};
+        const query = {nomeProduto: produto.nomeProduto};
         this.model.findOneAndUpdate(query, produto).exec();
     }
 
-    buscar(idProduto){
+    buscar(nomeProduto){
 
     }
 

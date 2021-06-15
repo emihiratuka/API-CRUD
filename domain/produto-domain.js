@@ -1,15 +1,13 @@
 //no domian defino o nosso objeto
 class Produto{
 
-    constructor(idProduto, categoriaProduto, nomeProduto, descricaoProduto, precoProduto, ativoProduto, imagemProduto, dataCadastroProduto) {
-        this.idProduto = idProduto;
+    constructor(categoriaProduto, nomeProduto, descricaoProduto, precoProduto, ativoProduto, imagemProduto) {
         this.categoriaProduto = categoriaProduto;
         this.nomeProduto = nomeProduto;
         this.descricaoProduto = descricaoProduto;
         this.precoProduto = precoProduto;
         this.ativoProduto = ativoProduto;
         this.imagemProduto = imagemProduto;
-        this.dataCadastroProduto = dataCadastroProduto;
     }
     
 }

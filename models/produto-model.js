@@ -6,14 +6,13 @@ const Produto = require('../domain/produto-domain');
 const ProdutoSchema = mongoose.Schema(
     
     { 
-        idProduto: Number,
         categoriaProduto: String,
         nomeProduto: String,
         descricaoProduto: String,
         precoProduto: Number,
         ativoProduto: Boolean,
         imagemProduto: String
-    }
+    }, { timestamps: true }
 );
 
 mongoose.model( 'Produto', ProdutoSchema); //quem importar o produto-model irá ganhar essa classe. 
